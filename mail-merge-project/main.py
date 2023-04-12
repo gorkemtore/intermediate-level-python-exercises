@@ -12,8 +12,7 @@ with open("./mail-merge-project/Input/Names/invited_names.txt") as invited_names
 for i in range(0, len(names)):
 
     name = names[i].split("\n")[0]
-    first_raw = lines[0].split("[")
-    first_raw = first_raw[0] + first_raw[1].replace("name]", name)
+    first_raw = lines[0].replace("[name]", name)
 
     new_mail = [first_raw]
     for line in lines[1:]:
